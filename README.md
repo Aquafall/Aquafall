@@ -21,18 +21,18 @@ To build Aquafall from source, follow these steps:
    git clone https://github.com/aquafall/aquafall.git
    cd aquafall```
 
-	2.	Install Dependencies
+2.	Install Dependencies
 Ensure you have Node.js installed. Then run:
 
 `npm install`
 
 
-	3.	Build the Project
+3.	Build the Project
 
 `npm run build`
 
 
-	4.	Start the Development Server
+4.	Start the Development Server
 
 `npm run dev`
 
