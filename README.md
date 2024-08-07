@@ -24,17 +24,17 @@ To build Aquafall from source, follow these steps:
 2.	Install Dependencies.  
 Ensure you have Node.js installed. Then run:
 
-`npm install`
+   `npm install`
 
 
 3.	Build the Project
 
-`npm run build`
+   `npm run build`
 
 
 4.	Start the Development Server
 
-`npm run dev`
+   `npm run dev`
 
 Navigate to http://localhost:5173 in your web browser to view the application.
 
