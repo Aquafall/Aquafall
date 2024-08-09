@@ -19,7 +19,8 @@ To build Aquafall from source, follow these steps:
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/aquafall/aquafall.git
-   cd aquafall```
+   cd aquafall
+   ```
 
 2.	Install Dependencies.  
 Ensure you have Node.js installed. Then run:
@@ -48,4 +49,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 
-For questions or feedback, please open an issue on GitHub or contact us at logan@logangamesdaily.online.
+For questions or feedback, please open an issue on GitHub or contact us at AquafallOS@outlook.com.
