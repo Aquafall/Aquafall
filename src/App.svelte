@@ -1,5 +1,9 @@
 <script>
+    import Boot from "./states/Boot.svelte";
+
 
 </script>
 
-<div> i give up already :( </div>
+<div>
+    <Boot></Boot>
+</div>
