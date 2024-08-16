@@ -1,7 +1,7 @@
 <script>
     import Logo from "../../lib/general/Logo.svelte";
 
-    aaa
+    
 </script>
 
 <div class="taskbar">
