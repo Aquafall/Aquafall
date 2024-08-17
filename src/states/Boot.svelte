@@ -1,13 +1,28 @@
 <script>
+    import { onMount } from "svelte";
+    import { log } from "../resources/logging/log";
+	import Logo from "../lib/general/Logo.svelte";
+    export let state;
+    
+	log("Booting")
+	
+
+    onMount(function() {
+        setTimeout(function() {
+            state = "desktop";
+        }, 5000)
+    })
+    
 </script>
 
 <div class="main">
-	<img src="./logo.svg" alt="logo" class="bootLogo" />
+	<Logo />
 	<div>
 		<div class="loader"></div>
 		<h3>Loading Aquafall...</h3>
 	</div>
 </div>
+
 
 <style>
 	.main {
@@ -21,6 +36,7 @@
 		left: 0px;
 		top: 0px;
 		gap: 25%;
+		animation: bootFade 10s ease-in-out normal forwards;
 	}
 	div {
 		flex-direction: column;
@@ -29,14 +45,11 @@
 		justify-content: center;
 		color: #ffffff;
 	}
-	.bootLogo {
-		max-width: 25%;
-		max-height: 25%;
-	}
+	
 	.loader {
 		position: relative;
-		border: 7px solid #ffffff;
-		border-top: 7px solid #cccccc;
+		border: 9px solid #121212;
+		border-top: 9px solid #555555;
 		border-radius: 50%;
 		width: 60px;
 		height: 60px;
@@ -51,4 +64,16 @@
 			transform: rotate(360deg);
 		}
 	}
+
+    @keyframes bootFade {
+        0% {
+            opacity: 1;
+        }
+        95% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
 </style>
