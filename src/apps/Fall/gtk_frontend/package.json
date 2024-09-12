@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "node-gtk": "^0.12.0"
+  },
+  "type": "module"
+}

@@ -1,13 +1,12 @@
 <script>
-    import Boot from "./states/Boot.svelte";
+    import App from "./apps/Fall/App.svelte";
+import Boot from "./states/Boot.svelte";
     import Crash from "./states/Crash.svelte";
     import Desktop from "./states/Desktop.svelte";
 
-    let state = "boot";
+    let state = "browsertest";
 
-    let crasherr = "Unknown"
-
-    
+    let crasherr = "Unknown";
 </script>
 
 <div>
@@ -19,8 +18,10 @@
         <Desktop bind:state bind:crasherr></Desktop>
     {:else if state === "crash"}
         <Crash bind:state bind:crasherr></Crash>
+    {:else if state === "browsertest"}
+        <App bind:state bind:crasherr></App>
     {:else}
-        {crasherr="StateError: unknown state"}
+        {(crasherr = "StateError: unknown state")}
         <Crash bind:state bind:crasherr></Crash>
     {/if}
 
