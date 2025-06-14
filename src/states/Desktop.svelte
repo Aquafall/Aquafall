@@ -1,20 +1,27 @@
 <script>
-    import Taskbar from "./Desktop/Taskbar.svelte";
+    import StartMenu from "./Desktop/StartMenu.svelte";
+import Taskbar from "./Desktop/Taskbar.svelte";
 
+export let username = "";
     export let state;
     export let crasherr;
+    export let rotur;
+    let startButton;
+
+    export let startMenuOpen = false;
 
     // crasherr = "Desktop cannot continue. FINISH ME"
     // state="crash"
 </script>
 
 <div>
-    <Taskbar></Taskbar>
+    <Taskbar bind:startMenuOpen bind:startButton></Taskbar>
+    <StartMenu bind:startMenuOpen bind:rotur bind:username bind:startButton></StartMenu>
 </div>
 
 <style>
     div {
-        background-image: url(/wallpapers/Garion-Japan.jpg);
+        background-image: url(/wallpapers/Garion-Japan.svg);
         background-size: cover;
         background-position: center;
         width: 100%;

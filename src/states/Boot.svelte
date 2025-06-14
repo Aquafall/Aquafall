@@ -19,7 +19,6 @@
 	<Logo />
 	<div>
 		<div class="loader"></div>
-		<h3>Loading Aquafall...</h3>
 	</div>
 </div>
 
@@ -35,8 +34,12 @@
 		border: 0;
 		left: 0px;
 		top: 0px;
-		gap: 25%;
+		gap: 10%;
 		animation: bootFade 10s ease-in-out normal forwards;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
 	}
 	div {
 		flex-direction: column;

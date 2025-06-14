@@ -14,9 +14,6 @@ function handleErrors(event) {
   console.log(event)
   document.body.innerHTML = "<div class=\"crashscreen\"><img src=\"./logo.svg\" alt=\"logo\" class=\"crashLogo\" /><h1> Aquafall crashed! </h1> <p> Error: "+crasherr+"</p></div>"
 
-  setTimeout(() => {
-    window.location.reload()
-  }, 2500)
 }
 
 window.addEventListener("error", handleErrors, {passive: false})

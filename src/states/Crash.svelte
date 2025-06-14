@@ -9,14 +9,6 @@
     log("!!! [[[ SYSTEM HAS CRASHED ]]] !!!")
     
     import Logo from "../lib/general/Logo.svelte";
-
-    onMount(function() {
-        setTimeout(function() {
-            window.location.reload()
-        
-    }, 5500)
-})
-
 </script>
 
 <div bind:this={div}>

@@ -19,7 +19,7 @@ body {
     top: 0px;
     padding: 10px;
     animation: fadein ease-in 0.5s forwards, fadeout ease-in 0.5s 4.5s forwards;
-    background: linear-gradient(135deg, rgba(0,100,200,1) 0%, rgba(9,9,121,1) 50%, rgba(2,0,36,1) 100%);
+    /*background: linear-gradient(135deg, rgba(0,100,200,1) 0%, rgba(9,9,121,1) 50%, rgba(2,0,36,1) 100%);*/
     color: white;
     font-size: x-large;
     display: flex;
@@ -32,8 +32,7 @@ body {
 .crashLogo {
     max-width: 25%;
     max-height: 25%;
-    position: absolute;
-    animation: fallBecauseFunny 2s forwards linear;
+    /*animation: fallBecauseFunny 2s forwards linear;*/
 }
 
 @keyframes fallBecauseFunny {
