@@ -2,6 +2,7 @@
 import Boot from "./states/Boot.svelte";
     import Crash from "./states/Crash.svelte";
     import Desktop from "./states/Desktop.svelte";
+    import Login from "./states/Login.svelte";
 
     let state = "boot";
 
@@ -14,7 +15,7 @@ import Boot from "./states/Boot.svelte";
     {:else if state === "desktop"}
         <Desktop bind:state bind:crasherr></Desktop>
     {:else if state === "login"}
-        <Desktop bind:state bind:crasherr></Desktop>
+        <Login bind:state bind:crasherr></Login>
     {:else if state === "crash"}
         <Crash bind:state bind:crasherr></Crash>
     {:else}

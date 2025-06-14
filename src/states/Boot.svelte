@@ -9,7 +9,7 @@
 
     onMount(function() {
         setTimeout(function() {
-            state = "desktop";
+            state = "login";
         }, 5000)
     })
     

@@ -1,7 +1,7 @@
 <script>
     export let state;
- var username = ""
- var password = ""
+    var username = ""
+    var password = ""
 </script>
 
 <div>
