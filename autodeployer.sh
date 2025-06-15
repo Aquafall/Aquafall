@@ -23,6 +23,14 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+if [ $DEPLOY_DIR != "" ] then
+    echo "Deployment directory is set to: $DEPLOY_DIR"
+else
+    echo "Deployment directory is not set. Setting it to dist/"
+    DEPLOY_DIR="dist"
+    echo "Deployment directory is now: $DEPLOY_DIR"
+fi
+
 rm -rf "$DEPLOY_DIR"/*
 echo "Deployment directory cleaned."
 echo "Copying build files to the deployment directory..."
