@@ -27,7 +27,13 @@
     });
 
     document.addEventListener("mousemove", () => {
-        changeLockScreenState();
+        if (!onLockScreen) {
+            return;
+        }
+        clearTimeout(lockTimeout);
+        lockTimeout = setTimeout(() => {
+            onLockScreen = true;
+        }, 10000); // Lock screen after 10 seconds of inactivity
     });
 
     document.addEventListener("keyup", () => {
