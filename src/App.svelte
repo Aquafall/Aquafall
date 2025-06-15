@@ -9,6 +9,8 @@
 
     let state = "boot";
 
+    let pfpurl = "/PFP.svg"; // Default profile picture URL
+
     let crasherr = "Unknown";
 
     let rotur = new Rotur({
@@ -32,9 +34,9 @@
     {#if state === "boot"}
         <Boot bind:state></Boot>
     {:else if state === "desktop"}
-        <Desktop bind:state bind:crasherr bind:rotur bind:username></Desktop>
+        <Desktop bind:state bind:crasherr bind:rotur bind:username bind:pfpurl></Desktop>
     {:else if state === "login"}
-        <Login bind:state bind:crasherr bind:rotur bind:username></Login>
+        <Login bind:state bind:crasherr bind:rotur bind:username bind:pfpurl></Login>
     {:else if state === "crash"}
         <Crash bind:state bind:crasherr ></Crash>
     {:else}

@@ -18,7 +18,7 @@
 <div class="start-menu {startMenuOpen ? 'open' : ''}" bind:this={startMenu}>
     <div class="start-menu-content">
         <div class="start-menu-header">
-            <img class="pfp" src={pfpurl} alt="Profile Picture">
+            <img class="spfp" src={pfpurl} alt="Profile Picture">
             <div class="username">{username}</div>
         </div>
     </div>
@@ -57,10 +57,11 @@
         width: 100%;
         height: 15%;
     }
-    .pfp {
+    .spfp {
         max-height: 8%;
         max-width: 8%;
         border-radius: 50%;
         margin: 10px;
+        outline: #000 2px solid;
     }
 </style>

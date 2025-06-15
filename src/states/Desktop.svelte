@@ -8,6 +8,8 @@ export let username = "";
     export let rotur;
     let startButton;
 
+    export let pfpurl = "/PFP.svg"; // Default profile picture URL
+
     export let startMenuOpen = false;
 
     // crasherr = "Desktop cannot continue. FINISH ME"
@@ -16,7 +18,7 @@ export let username = "";
 
 <div>
     <Taskbar bind:startMenuOpen bind:startButton></Taskbar>
-    <StartMenu bind:startMenuOpen bind:rotur bind:username bind:startButton></StartMenu>
+    <StartMenu bind:startMenuOpen bind:rotur bind:username bind:startButton bind:pfpurl></StartMenu>
 </div>
 
 <style>

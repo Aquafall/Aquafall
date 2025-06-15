@@ -3,22 +3,59 @@
     export let username = ""
     var password = ""
     export let rotur;
-    export let PFP = "PFP.svg";
+    export let pfpurl = "PFP.svg";
+
+    var loggingIn = false;
 
     import '../css/Login.css';
+    import Clock from './Login/Clock.svelte';
+
+    var onLockScreen = true;
+    var lockTimeout;
+
+    function changeLockScreenState() {
+    if (onLockScreen) {
+        clearTimeout(lockTimeout);
+        onLockScreen = false;
+        lockTimeout = setTimeout(() => {
+            onLockScreen = true;
+        }, 10000); // Lock screen after 10 seconds of inactivity
+    }}
+
+    document.addEventListener("keypress", () => {
+        changeLockScreenState();
+    });
+
+    document.addEventListener("mousemove", () => {
+        changeLockScreenState();
+    });
+
+    document.addEventListener("keyup", () => {
+        changeLockScreenState();
+    });
 </script>
 
-<div class="login-container">
-    <div class="bg"></div>
-    <img class="pfp" src="PFP.svg" alt="Profile Picture">
-    <input type="text" bind:value={username}>
-    <input type="password" bind:value={password}>
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div class="login-container" on:click={changeLockScreenState} >
+    <div class="bg {!onLockScreen ? "blurred" : ""}"></div>
 
-    <button class="loginButton" on:click={() => {
+    <div class="lockscreen {!onLockScreen ? "hidden" : ""}">
+        <Clock />
+        <p class="bottom">Click to unlock</p>
+    </div>
+    <!-- svelte-ignore a11y-img-redundant-alt -->
+    <img class="pfp {!onLockScreen ? "shown" : ""}" src={pfpurl} alt="Profile Picture">
+    {#if !loggingIn}
+    <input class={!onLockScreen ? "shown" : ""} type="text" bind:value={username}>
+    <input class={!onLockScreen ? "shown" : ""} type="password" bind:value={password}>
+
+    <button class="loginButton {!onLockScreen ? "shown" : ""}" on:click={() => {
+        loggingIn = true;
         rotur.login({ user: username, pass: password, md5: true })
             .then((data) => {
-                state = "desktop";
-                PFP = data["pfp"] || "PFP.svg";
+                setTimeout(() => { state = "desktop"; }, 1000);
+                pfpurl = data["pfp"] || "PFP.svg";
                 console.log(data);
             })
             .catch((err) => {
@@ -26,4 +63,10 @@
                 alert("Login failed: " + err.message);
             });
     }}>Login</button>
+    {:else}
+    <div class="loggingIn">
+        <p> {username} </p>
+        <p>Logging in...</p>
+    </div>
+    {/if}
 </div>
