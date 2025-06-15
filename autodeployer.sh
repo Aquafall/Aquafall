@@ -26,7 +26,7 @@ fi
 rm -rf "$DEPLOY_DIR"/*
 echo "Deployment directory cleaned."
 echo "Copying build files to the deployment directory..."
-cp -r build/* "$DEPLOY_DIR"
+cp -r dist/* "$DEPLOY_DIR"
 if [ $? -ne 0 ]; then
     echo "Failed to copy build files to the deployment directory."
     exit 1
