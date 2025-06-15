@@ -3,6 +3,7 @@
     import { log } from "../resources/logging/log";
 	import Logo from "../lib/general/Logo.svelte";
     export let state;
+    export let versionHash;
     
 	log("Booting")
 	
@@ -20,6 +21,7 @@
 	<div>
 		<div class="loader"></div>
 	</div>
+	<div class="version">Unique Version ID: {versionHash}</div>
 </div>
 
 
@@ -57,6 +59,12 @@
 		width: 60px;
 		height: 60px;
 		animation: spin 0.7s linear infinite;
+	}
+
+	.version {
+		font-family: 'Nunito', monospace;
+		font-size: normal;
+		color: #676767;
 	}
 
 	@keyframes spin {

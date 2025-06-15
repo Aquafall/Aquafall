@@ -19,7 +19,7 @@
         onLockScreen = false;
         lockTimeout = setTimeout(() => {
             onLockScreen = true;
-        }, 10000); // Lock screen after 10 seconds of inactivity
+        }, 60000); // Lock screen after 10 seconds of inactivity
     }}
 
     document.addEventListener("keypress", () => {
@@ -33,7 +33,7 @@
         clearTimeout(lockTimeout);
         lockTimeout = setTimeout(() => {
             onLockScreen = true;
-        }, 10000); // Lock screen after 10 seconds of inactivity
+        }, 60000); // Lock screen after 10 seconds of inactivity
     });
 
     document.addEventListener("keyup", () => {

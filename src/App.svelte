@@ -5,6 +5,23 @@
     import Login from "./states/Login.svelte";
     import Rotur from "./lib/rotur/rotur";
 
+    let debugMode = false; // Set to true to enable debug mode
+    let http = new XMLHttpRequest();
+    http.open("GET", "/versionHash.txt", false);
+    http.send(null);
+
+    if (http.status === 200) {
+        console.log("Version file loaded successfully");
+    } else {
+        console.error("Failed to load version file");
+    }
+    console.log("Version:", http.responseText.trim());
+    let versionHash = http.responseText.trim();
+
+    if (versionHash == "No version hash, not built.") {
+        debugMode = true;
+    }
+
     let username = "";
 
     let state = "boot";
@@ -32,7 +49,7 @@
 
 <div>
     {#if state === "boot"}
-        <Boot bind:state></Boot>
+        <Boot bind:state bind:versionHash></Boot>
     {:else if state === "desktop"}
         <Desktop bind:state bind:crasherr bind:rotur bind:username bind:pfpurl></Desktop>
     {:else if state === "login"}
@@ -44,7 +61,9 @@
         <Crash bind:state bind:crasherr ></Crash>
     {/if}
 
-    <p class="debuginfo">DEBUG MODE ENABLED <br> State: {state}</p>
+    {#if debugMode}
+        <p class="debuginfo">DEBUG MODE ENABLED <br> Version: {versionHash} <br> State: {state}</p>
+    {/if}
 </div>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -19,6 +19,10 @@ export let username = "";
 <div>
     <Taskbar bind:startMenuOpen bind:startButton></Taskbar>
     <StartMenu bind:startMenuOpen bind:rotur bind:username bind:startButton bind:pfpurl></StartMenu>
+
+    {#if state === "crash"}
+        <p class="error">Error: {crasherr}</p>
+    {/if}
 </div>
 
 <style>
