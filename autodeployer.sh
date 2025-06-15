@@ -23,7 +23,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-if [ $DEPLOY_DIR != "" ] then
+if [ $DEPLOY_DIR != "" ]; then
     echo "Deployment directory is set to: $DEPLOY_DIR"
 else
     echo "Deployment directory is not set. Setting it to dist/"
