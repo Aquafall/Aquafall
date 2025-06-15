@@ -1,6 +1,7 @@
 #!/bin/bash
+# Load config
+source ./autodeploy.conf
 
-$DEPLOY_DIR="/path/to/your/deployment/directory"
 if [ ! -d "$DEPLOY_DIR" ]; then
     echo "Deployment directory does not exist. Creating it now."
     mkdir -p "$DEPLOY_DIR"
