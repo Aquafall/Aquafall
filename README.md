@@ -1,3 +1,4 @@
+# This project is discontinued. Check out [ArcOS](https://v7.izkuipers.nl]
 # Aquafall
 
 Aquafall is an operating system developed for the web using Svelte. It provides a modern, user-friendly experience and is born from the ashes of the ArcOS project, which has recently announced its shutdown.
